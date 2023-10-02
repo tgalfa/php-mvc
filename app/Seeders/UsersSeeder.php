@@ -20,7 +20,7 @@ class UsersSeeder
         $user = $statement->fetch();
 
         if (!$user) {
-            $password = password_hash('password', PASSWORD_DEFAULT);
+            $password = password_hash('test', PASSWORD_DEFAULT);
             $SQL = "INSERT INTO users (name, email, status, password) 
                 VALUES ('admin', 'admin@admin.com', 1, '$password');";
             $db->pdo->exec($SQL);

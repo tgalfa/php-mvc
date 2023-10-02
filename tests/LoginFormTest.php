@@ -27,7 +27,7 @@ class LoginFormTest extends TestCase
         $loginForm = new LoginForm();
 
         $loginForm->username = 'admin';
-        $loginForm->password = 'password';
+        $loginForm->password = 'test';
 
         $this->assertTrue($loginForm->login());
     }
