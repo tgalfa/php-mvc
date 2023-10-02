@@ -21,14 +21,19 @@ cd php-mvc
 cp .env.example .env
 ```
 Update the .env file with your preferred configuration.
-Make sure to set the database configuration (DB_DSN, DB_USER, DB_PASSWORD), BASE_URL, and APP_NAME as needed:
+Make sure to set the database configuration (DB_DSN, DB_USER, DB_PASSWORD), BASE_URL, and APP_NAME as needed.
 
-4. Install Composer dependencies:
+4. Build the Docker image
+```bash
+docker compose -f docker-compose.yml up -d --build
+```
+
+5. Install Composer dependencies:
 ```bash
 docker exec -it mvc-php composer install
 ```
 
-5. Run database migrations with seeding:
+6. Run database migrations with seeding:
 ```bash
 docker exec -it mvc-php composer migrate:seed
 ```
