@@ -1,0 +1,9 @@
+/vendor
+/.docker
+/.phpunit.cache
+/.vscode
+.env
+.env.backup
+.phpunit.result.cache
+.php_cs.cache
+.php-cs-fixer.cache

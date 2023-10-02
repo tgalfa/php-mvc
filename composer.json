@@ -1,0 +1,43 @@
+{
+    "require": {
+        "php": "^8.1",
+        "vlucas/phpdotenv": "^5.5",
+        "twig/twig": "^3.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.7",
+        "friendsofphp/php-cs-fixer": "^3.34",
+        "phpro/grumphp": "^2.1",
+        "phpmd/phpmd": "^2.14",
+        "phpunit/phpunit": "^10.3"
+    },
+    "scripts": {
+        "style:check": "./vendor/bin/php-cs-fixer fix --dry-run --diff",
+        "style:fix": "./vendor/bin/php-cs-fixer fix",
+        "sniff:check": "./vendor/bin/phpcs --standard=PSR12 -p ./app ./public",
+        "sniff:fix": "./vendor/bin/phpcbf --standard=PSR12 -p ./app ./public",
+        "code:fix": [
+            "@style:fix",
+            "@sniff:fix"
+        ],
+        "phpmd": "./vendor/bin/phpmd ./app ./public text phpmd-ruleset.xml",
+        "migrate": "php migrations.php",
+        "migrate:rollback": "php migrations.php rollback",
+        "migrate:seed": "php migrations.php seed"
+    },
+    "config": {
+        "allow-plugins": {
+            "phpro/grumphp": true
+        }
+    }
+}

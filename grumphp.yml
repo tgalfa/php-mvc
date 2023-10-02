@@ -1,0 +1,22 @@
+grumphp:
+    environment:
+        paths:
+            - 'app'
+            - 'public'
+    tasks:
+        phpcs:
+            standard: PSR2
+            whitelist_patterns: ['Internal.NoCodeFound']
+        phpmd:
+            report_format: text
+            ruleset: ['./phpmd-ruleset.xml']
+            triggered_by: ['php']
+        phpunit:
+            always_execute: true
+        phpcsfixer:
+            config: '.php-cs-fixer.dist.php'
+            using_cache: true
+            config_contains_finder: true
+            verbose: true
+            triggered_by: ['php']
+
