@@ -1,4 +1,4 @@
-# My PHP Application
+# PHP MVC Application
 
 This repository contains a PHP application built with Docker Compose, which includes Nginx, MySQL, and various scripts for development and testing.
 
@@ -8,12 +8,12 @@ Follow these steps to set up and run the application:
 
 1. Clone this repository to your local machine:
 ```bash
-git clone https://github.com/tgalfa/mvc-php.git
+git clone git@github.com:tgalfa/php-mvc.git
 ```
 
 2. Navigate to the project directory:
 ```bash
-cd mvc-php
+cd php-mvc
 ```
 
 3. Create a .env file based on the provided .env.example:
@@ -21,7 +21,7 @@ cd mvc-php
 cp .env.example .env
 ```
 Update the .env file with your preferred configuration.
-Make sure to set the database configuration, BASE_URL, and APP_NAME as needed:
+Make sure to set the database configuration (DB_DSN, DB_USER, DB_PASSWORD), BASE_URL, and APP_NAME as needed:
 
 4. Install Composer dependencies:
 ```bash
